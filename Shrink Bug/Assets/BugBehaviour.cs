@@ -6,15 +6,18 @@ public class BugBehaviour : MonoBehaviour
 {
     public float LRMovementSpeed;
     public float DownMovementSpeed;
-    public int health;
-    public int damage;
-    public bool goingRight = false;
+
+    public EnemyBehaviour enemyBehaviour;
+    
     public GameObject generalStats;
+    
+    public bool goingRight = false;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        generalStats = GameObject.Find("GeneralStats");
     }
 
     // Update is called once per frame
@@ -44,7 +47,7 @@ public class BugBehaviour : MonoBehaviour
     }
 
     void perishAndDealDamage() {
-        generalStats.GetComponent<GeneralStatsBehaviour>().playerHealth -= damage;
+        generalStats.GetComponent<GeneralStatsBehaviour>().playerHealth -= enemyBehaviour.damage;
         Destroy(this.gameObject);
     }
 }
