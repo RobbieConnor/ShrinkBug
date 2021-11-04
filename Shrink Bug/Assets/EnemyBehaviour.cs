@@ -8,9 +8,12 @@ public class EnemyBehaviour : MonoBehaviour
     public int damage;
 
     public BugSpawnBehaviour bugSpawner;
+
+    public TextControllerBehaviour textController;
     // Start is called before the first frame update
     void Start()
     {
+        textController = GameObject.Find("Text Controller").GetComponent<TextControllerBehaviour>();
         bugSpawner = GameObject.Find("Bug Spawner").GetComponent<BugSpawnBehaviour>();
     }
 
@@ -24,6 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
         health -= damageAmount;
 
         if (health <= 0) {
+            textController.increaseBugsBeat();
             perish();
         }
     }
