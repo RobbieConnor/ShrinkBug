@@ -199,6 +199,9 @@ MonoBehaviour:
   health: 1
   damage: 1
   bugSpawner: {fileID: 0}
+  textController: {fileID: 0}
+  basicDrop: {fileID: 648350858680969349, guid: 9687fc6df4e684e4daeac4328ceca55f,
+    type: 3}
 --- !u!61 &6426915294939431053
 BoxCollider2D:
   m_ObjectHideFlags: 0
